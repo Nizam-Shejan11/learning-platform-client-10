@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import MenuBar from "../Shared/MenuBar/MenuBar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import {
   getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { useState } from "react";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const auth = getAuth(app);
 
 const Login = () => {
+  const [user, setUser] = useState({});
   const [success, setSuccess] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
@@ -51,6 +57,36 @@ const Login = () => {
       alert("Please check your email & reset password");
     });
   };
+
+  const { providerLogin } = useContext(AuthContext);
+
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
+  };
+
+  const handleGithubSignin = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
+  };
+
   return (
     <div>
       <MenuBar />
@@ -100,6 +136,24 @@ const Login = () => {
             <Link to="/register"> Register</Link>
           </small>
         </p>
+        <div className=" d-grid gap-2 ">
+          <Button
+            onClick={handleGoogleSignIn}
+            className="text-primary"
+            variant="light"
+            size="lg"
+          >
+            <FaGoogle /> Sign up with Google
+          </Button>
+          <Button
+            onClick={handleGithubSignin}
+            className="text-primary"
+            variant="light"
+            size="lg"
+          >
+            <FaGithub /> Sign up with GitHub
+          </Button>
+        </div>
       </div>
     </div>
   );

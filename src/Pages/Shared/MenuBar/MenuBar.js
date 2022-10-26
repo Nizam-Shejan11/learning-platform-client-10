@@ -6,7 +6,16 @@ import { FaUser } from "react-icons/fa";
 import { Image } from "react-bootstrap";
 
 const MenuBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="MenuBar-container">
       <div className="container">
@@ -20,12 +29,12 @@ const MenuBar = () => {
           </div>
           <div className="col-md-10">
             <div className="menu-container ">
-              <ul className="d-flex align-items-end justify-content-end">
+              <ul className="d-flex align-items-center justify-content-end">
                 <Link to="/" className="items">
                   <li>Home</li>
                 </Link>
                 <Link to="/about" className="items">
-                  <li>About</li>
+                  <li>FAQ</li>
                 </Link>
                 <Link to="/courses" className="items">
                   <li>Courses</li>
@@ -33,29 +42,39 @@ const MenuBar = () => {
                 <Link to="/blogs" className="items">
                   <li>Blogs</li>
                 </Link>
-                <Link to="/login" className="items">
-                  <li>Log in</li>
-                </Link>
-                <Link to="/register" className="items">
-                  <li>Register</li>
-                </Link>
+
                 <Link className="items d-flex">
-                  <h3 style={{ color: "orange" }}>{user?.displayName}</h3>
-                  <>
+                  <div>
+                    {user?.uid ? (
+                      <div className="d-flex">
+                        <Link onClick={handleLogOut} className="items">
+                          <li>Logout</li>
+                        </Link>
+                        <h3 style={{ color: "orange" }}>{user?.displayName}</h3>
+                      </div>
+                    ) : (
+                      <div className="d-flex">
+                        <Link to="/login" className="items">
+                          <li>Log in</li>
+                        </Link>
+                        <Link to="/register" className="items">
+                          <li>Register</li>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                  <div>
                     {user?.photoURL ? (
                       <Image
-                        style={{ height: "40px" }}
+                        style={{ height: "30px" }}
                         roundedCircle
                         src={user?.photoURL}
                       ></Image>
                     ) : (
                       <FaUser />
                     )}
-                  </>
+                  </div>
                 </Link>
-                {/* <Link className="items">
-                  
-                </Link> */}
               </ul>
             </div>
           </div>

@@ -5,8 +5,10 @@ import Form from "react-bootstrap/Form";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   sendEmailVerification,
+  signInWithPopup,
   updateProfile,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
@@ -19,6 +21,7 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 const auth = getAuth(app);
 
 const Register = () => {
+  const [user, setUser] = useState({});
   const [passwordError, setPasswordError] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -72,11 +75,25 @@ const Register = () => {
   const { providerLogin } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
       .then((result) => {
         const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
+  };
+
+  const handleGithubSignin = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
         console.log(user);
       })
       .catch((error) => {
@@ -143,7 +160,12 @@ const Register = () => {
           >
             <FaGoogle /> Sign up with Google
           </Button>
-          <Button className="text-primary" variant="light" size="lg">
+          <Button
+            onClick={handleGithubSignin}
+            className="text-primary"
+            variant="light"
+            size="lg"
+          >
             <FaGithub /> Sign up with GitHub
           </Button>
         </div>
