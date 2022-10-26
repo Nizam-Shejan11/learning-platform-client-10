@@ -1,23 +1,34 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./CoursesDetails.css";
+import { Link } from "react-router-dom";
 
 const CoursesDetails = ({ course }) => {
+  const { name, image, its_title, its_paragraph, time, access, price } = course;
   return (
     <div>
       <Card className=" w-50 mx-auto mt-5 mb-5 text-center">
-        <Card.Header>Featured</Card.Header>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Header className="fs-3"> {name} </Card.Header>
+        <Card.Img className="mx-auto my-auto" variant="top" src={image} />
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
+          <Card.Title> {its_title} </Card.Title>
           <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
+            {/* {its_paragraph} */}
+            {its_paragraph.length > 200 ? (
+              <>
+                {its_paragraph.slice(0, 200) + "..."} <Link>Read More</Link>{" "}
+              </>
+            ) : (
+              its_paragraph
+            )}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Details</Button>
         </Card.Body>
-        <Card.Footer className="text-muted">2 days ago</Card.Footer>
+        <Card.Footer className="d-flex justify-content-between align-item-center  fs-6 text-muted">
+          <p> Duration: {time} </p>
+          <p> Access: {access} </p>
+          <p> Price: {price} </p>
+        </Card.Footer>
       </Card>
     </div>
   );
