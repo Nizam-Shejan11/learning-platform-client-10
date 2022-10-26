@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import Footer from "../Shared/Footer/Footer";
 import MenuBar from "../Shared/MenuBar/MenuBar";
 import CoursesDetails from "./CoursesDetails";
 
@@ -18,6 +19,7 @@ const Courses = () => {
       {courses.map((course) => (
         <CoursesDetails key={course.id} course={course}></CoursesDetails>
       ))}
+      <Footer />
     </div>
   );
 };

@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import Footer from "../Shared/Footer/Footer";
 
 const auth = getAuth(app);
 
@@ -151,7 +152,7 @@ const Register = () => {
             <Link to="/login"> Log in</Link> OR
           </small>
         </p>
-        <div className=" d-grid gap-2 ">
+        <div className="mb-5 d-grid gap-2 ">
           <Button
             onClick={handleGoogleSignIn}
             className="text-primary"
@@ -170,6 +171,7 @@ const Register = () => {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

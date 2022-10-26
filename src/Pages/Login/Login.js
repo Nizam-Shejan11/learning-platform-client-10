@@ -15,6 +15,7 @@ import app from "../../firebase/firebase.config";
 import { useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import Footer from "../Shared/Footer/Footer";
 
 const auth = getAuth(app);
 
@@ -136,7 +137,7 @@ const Login = () => {
             <Link to="/register"> Register</Link>
           </small>
         </p>
-        <div className=" d-grid gap-2 ">
+        <div className="mb-5 d-grid gap-2 ">
           <Button
             onClick={handleGoogleSignIn}
             className="text-primary"
@@ -155,6 +156,7 @@ const Login = () => {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -34,13 +34,13 @@ const MenuBar = () => {
                   <li>Home</li>
                 </Link>
                 <Link to="/about" className="items">
-                  <li>FAQ</li>
+                  <li>About</li>
                 </Link>
                 <Link to="/courses" className="items">
                   <li>Courses</li>
                 </Link>
                 <Link to="/blogs" className="items">
-                  <li>Blogs</li>
+                  <li>FAQ</li>
                 </Link>
 
                 <Link className="items d-flex">
