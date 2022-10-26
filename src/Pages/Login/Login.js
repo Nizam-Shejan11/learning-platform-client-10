@@ -20,6 +20,7 @@ import Footer from "../Shared/Footer/Footer";
 const auth = getAuth(app);
 
 const Login = () => {
+  const [error, setError] = useState("");
   const [user, setUser] = useState({});
   const [success, setSuccess] = useState(false);
   const [userEmail, setUserEmail] = useState("");
@@ -38,9 +39,11 @@ const Login = () => {
         console.log(user);
         setSuccess(true);
         form.reset();
+        setError("");
       })
       .catch((error) => {
         console.error("error", error);
+        setError(error.message);
       });
   };
 
@@ -91,7 +94,7 @@ const Login = () => {
   return (
     <div>
       <MenuBar />
-      <div className="w-50 mx-auto mt-5">
+      <div className="w-25 mx-auto mt-5">
         <h3 className="text-success">Please Login..</h3>
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -119,9 +122,12 @@ const Login = () => {
             <p className="text-success">Successfully login to your account</p>
           )}
 
-          <Button variant="primary" type="submit">
-            Log in
-          </Button>
+          <>
+            <Button variant="primary" type="submit">
+              Log in
+            </Button>
+            <Form.Text className="text-danger">{error}</Form.Text>
+          </>
         </Form>
         <p>
           <small>

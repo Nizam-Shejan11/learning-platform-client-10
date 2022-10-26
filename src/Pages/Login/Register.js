@@ -105,7 +105,7 @@ const Register = () => {
   return (
     <div>
       <MenuBar />
-      <div className="w-50 mx-auto mt-5">
+      <div className="w-25 mx-auto mt-5">
         <h3 className="text-primary">Please Register..</h3>
         <Form onSubmit={handleRegister}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
