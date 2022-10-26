@@ -1,7 +1,12 @@
 import "./MenuBar.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { FaUser } from "react-icons/fa";
+import { Image } from "react-bootstrap";
 
 const MenuBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="MenuBar-container">
       <div className="container">
@@ -9,7 +14,7 @@ const MenuBar = () => {
           <div className="col-md-2">
             <div className="logo-img">
               <h1 className="text-success">
-                LearnWith<span style={{ color: "orange" }}>SHEJAN</span>
+                LWith<span style={{ color: "orange" }}>SHEJAN</span>
               </h1>
             </div>
           </div>
@@ -34,6 +39,23 @@ const MenuBar = () => {
                 <Link to="/register" className="items">
                   <li>Register</li>
                 </Link>
+                <Link className="items d-flex">
+                  <h3 style={{ color: "orange" }}>{user?.displayName}</h3>
+                  <>
+                    {user?.photoURL ? (
+                      <Image
+                        style={{ height: "40px" }}
+                        roundedCircle
+                        src={user?.photoURL}
+                      ></Image>
+                    ) : (
+                      <FaUser />
+                    )}
+                  </>
+                </Link>
+                {/* <Link className="items">
+                  
+                </Link> */}
               </ul>
             </div>
           </div>

@@ -5,12 +5,16 @@ import Form from "react-bootstrap/Form";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   sendEmailVerification,
   updateProfile,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const auth = getAuth(app);
 
@@ -65,6 +69,21 @@ const Register = () => {
       });
   };
 
+  const { providerLogin } = useContext(AuthContext);
+
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
+  };
+
   return (
     <div>
       <MenuBar />
@@ -112,9 +131,22 @@ const Register = () => {
         <p>
           <small>
             Allready have an account? Please
-            <Link to="/login"> Log in</Link>
+            <Link to="/login"> Log in</Link> OR
           </small>
         </p>
+        <div className=" d-grid gap-2 ">
+          <Button
+            onClick={handleGoogleSignIn}
+            className="text-primary"
+            variant="light"
+            size="lg"
+          >
+            <FaGoogle /> Sign up with Google
+          </Button>
+          <Button className="text-primary" variant="light" size="lg">
+            <FaGithub /> Sign up with GitHub
+          </Button>
+        </div>
       </div>
     </div>
   );
