@@ -1,3 +1,18 @@
+THE LearnJAVASCRIPT
+
+# **a comprehensive resource on college apps, SAT and TOEFL for senior and their families**
+
+Why will you use **LearnJAVASCRIPT** ?
+
+- best resource including recommendation letter, commonapp personal and supplimental esasy tips
+- JAVASCRIPT math live walkthrough pracitce
+- tips on **Front End & Back End**
+- _full ride courses list_
+
+**live site link:** -
+
+![assignment-pic-1](chrome-extension://bpconcjcammlapcogcnnelfmaeghhagj/edit.html)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +83,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # b610-learning-platform-client-side-Nizam-Shejan11
