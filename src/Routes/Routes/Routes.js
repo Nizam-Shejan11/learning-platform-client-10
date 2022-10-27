@@ -8,6 +8,7 @@ import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Login/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -24,11 +25,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <Courses />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Courses />{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/details/:courseId",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Details />{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blogs",
