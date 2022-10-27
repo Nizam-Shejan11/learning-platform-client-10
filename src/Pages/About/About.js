@@ -15,8 +15,7 @@ const About = () => {
             <div className="col-md-6 text-start">
               <h2 className="">NIZAM UDDIN SHEJAN</h2>
               <p className="lead">
-                Student | Programmer | Writer | Content Creator | Mentor at
-                Bright Brain
+                Student | Programmer | Writer | Content Creator
               </p>
             </div>
           </div>

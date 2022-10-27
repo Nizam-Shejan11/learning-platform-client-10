@@ -16,12 +16,12 @@ import {
 const Footer = () => {
   return (
     <div>
-      <div className="footer-container">
+      <div className="footer-container text-center">
         <div className="container">
           <div className="row">
             <div className="col-md-6">
               <div className="left-container text-start">
-                <h1>QuizGame</h1>
+                <h1>LearnJAVASCRIPT</h1>
                 <div className="icons-container d-flex text-center ">
                   <div className="icon">
                     <FontAwesomeIcon icon={faInstagram} />
@@ -46,7 +46,7 @@ const Footer = () => {
                 <p className="mt-5">
                   <small>
                     <FontAwesomeIcon icon={faCopyright} /> Nizam Uddin Shejan
-                    2022 || Programming Hero Assignment 09
+                    2022 || Programming Hero Assignment 10
                   </small>
                 </p>
               </div>

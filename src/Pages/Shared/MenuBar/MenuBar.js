@@ -22,8 +22,8 @@ const MenuBar = () => {
         <div className="row">
           <div className="col-md-2">
             <div className="logo-img">
-              <h1 className="text-success">
-                LWith<span style={{ color: "orange" }}>SHEJAN</span>
+              <h1 className="text-info">
+                Learn<span style={{ color: "orange" }}>JAVASCRIPT</span>
               </h1>
             </div>
           </div>
@@ -40,7 +40,7 @@ const MenuBar = () => {
                   <li>Courses</li>
                 </Link>
                 <Link to="/blogs" className="items">
-                  <li>FAQ</li>
+                  <li>Blogs</li>
                 </Link>
 
                 <Link className="items d-flex">

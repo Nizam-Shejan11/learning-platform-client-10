@@ -26,8 +26,8 @@ const AllCourses = () => {
       <div className="all-course">
         <h1>Explore Resources</h1>
         <p className="lead fs-6">
-          here is a little bit about our library of resources for your TOEFL,
-          SAT, and Computer Science studies
+          here is a little bit about our library of resources for your
+          programming, and Computer Science studies
         </p>
         <br />
       </div>
@@ -40,9 +40,9 @@ const AllCourses = () => {
                   <img className="img-fluid" src={course.image} alt="" />
                   <h2 className="fs-5 mt-2">{course.name}</h2>
                   <p className="lead fs-5">{course.time}</p>
-                  <small className="text-success">{course.access}</small> <br />
+                  <small className="text-info">{course.access}</small> <br />
                   <Link to={`/details/${course.id}`}>
-                    <Button className="btn btn-outline-success mt-2">
+                    <Button className="btn btn-outline-info mt-2">
                       Details
                     </Button>
                   </Link>
@@ -70,7 +70,7 @@ const AllCourses = () => {
       <div className="row">
         <div className="section-header text-center">
           <h1 className="mt-5">
-            Why SAT<span style={{ color: "#374050" }}>50 ?</span>
+            Why Learn<span style={{ color: "#374050" }}>JAVASCRIPT ?</span>
           </h1>
           <p className="lead fs-5">
             because we have the best resources avaiable, not just to study but

@@ -17,7 +17,6 @@ const Details = (props) => {
       .then((res) => res.json())
       .then((data) => setDetails(data[courseId]));
   }, []);
-  // console.log(details);
 
   return (
     <div className="details-container">

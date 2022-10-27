@@ -11,15 +11,19 @@ const Banner = () => {
           <MenuBar />
           <div className="col-6">
             <h1 className="title">
-              break a leg <br /> in your SKILLS 📈
+              develop Your <br /> Mind And Skills 📈
             </h1>
             <p className="text-white text-center mt-3">
-              A comprehensive resource for Programming. <br />
+              Want To Get Professional Knowledge In Fast-Developing IT Sphere?.{" "}
+              <br />
               <small className="text-warning">
-                new update* - the list of 100% full ride courses is published
+                If You Are Just An Amataur Who’s Willing To Get Professional
+                Knowledge Check What We Prepared For You!
               </small>
             </p>
-            <Button variant="outline-success about-btn">who are we?</Button>
+            <Button variant="outline-info text-white about-btn">
+              who are we?
+            </Button>
           </div>
         </div>
       </div>

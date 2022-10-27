@@ -25,7 +25,7 @@ const Courses = () => {
                 <p className="lead fs-5 pt-2">Moto: {course.its_title}</p>
                 <p className="lead fs-5">Total Time: {course.time}</p>
                 <p className="lead fs-5">Price: {course.price} USD</p>
-                <small className="text-primary">{course.access}</small>
+                <small className="text-info">{course.access}</small>
               </div>
             </div>
           </div>
