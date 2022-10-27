@@ -8,7 +8,9 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:7000/all-courses-details")
+    fetch(
+      "https://learning-platform-server-topaz.vercel.app/all-courses-details"
+    )
       .then((res) => res.json())
       .then((data) => setCourses(data));
   });

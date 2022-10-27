@@ -13,7 +13,9 @@ const Details = (props) => {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:7000/all-courses-details`)
+    fetch(
+      `https://learning-platform-server-topaz.vercel.app/all-courses-details`
+    )
       .then((res) => res.json())
       .then((data) => setDetails(data[courseId]));
   }, []);

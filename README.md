@@ -9,7 +9,7 @@ Why will you use **LearnJAVASCRIPT** ?
 - tips on **Front End & Back End**
 - _full ride courses list_
 
-**live site link:** -
+**live site link:** - https://learning-platform-dbefb.web.app
 
 ![assignment-pic-1](../learning-platform-client/src/assets/images/download.png)
 
