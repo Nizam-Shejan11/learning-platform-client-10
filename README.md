@@ -11,7 +11,7 @@ Why will you use **LearnJAVASCRIPT** ?
 
 **live site link:** -
 
-![assignment-pic-1](chrome-extension://bpconcjcammlapcogcnnelfmaeghhagj/edit.html)
+![assignment-pic-1](../learning-platform-client/src/assets/images/download.png)
 
 # Getting Started with Create React App
 
