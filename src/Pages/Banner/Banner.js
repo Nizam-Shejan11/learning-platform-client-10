@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import MenuBar from "../Shared/MenuBar/MenuBar";
 import "./Banner.css";
 
@@ -21,9 +22,11 @@ const Banner = () => {
                 Knowledge Check What We Prepared For You!
               </small>
             </p>
-            <Button variant="outline-info text-white about-btn">
-              who are we?
-            </Button>
+            <Link to={"/about"}>
+              <Button variant="outline-info text-white about-btn">
+                who are we?
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

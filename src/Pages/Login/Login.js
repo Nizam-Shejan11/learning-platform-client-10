@@ -61,7 +61,7 @@ const Login = () => {
 
   const handleForgetPassword = () => {
     if (!userEmail) {
-      alert("Please enter youur email address..");
+      alert("Please enter your email address..");
     }
     sendPasswordResetEmail(auth, userEmail).then(() => {
       alert("Please check your email & reset password");
