@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import MenuBar from "../Shared/MenuBar/MenuBar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   getAuth,
   GithubAuthProvider,
@@ -25,6 +25,11 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.pathname || "/";
+
   const handleLogin = (event) => {
     event.preventDefault();
     setSuccess(false);
@@ -40,6 +45,7 @@ const Login = () => {
         setSuccess(true);
         form.reset();
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error("error", error);
@@ -73,6 +79,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error("error", error);
@@ -85,6 +92,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error("error", error);
