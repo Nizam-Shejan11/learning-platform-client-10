@@ -1,6 +1,6 @@
 THE LearnJAVASCRIPT
 
-# **a comprehensive resource on college apps, SAT and TOEFL for senior and their families**
+# **a comprehensive resource on online for senior and their families**
 
 Why will you use **LearnJAVASCRIPT** ?
 
